@@ -1,11 +1,11 @@
-import { doc, updateDoc } from "firebase/firestore/lite"
+import { doc, updateDoc,collection } from "firebase/firestore/lite"
 import { database } from "./config"
 
 export const updateTask = async (userId, taskId, task, setLoading) => { 
     try {
         setLoading(true)
-        const collection = collection(database, userId)
-        const docRef = doc(collection, taskId)
+        const taskCollection = collection(database, userId)
+        const docRef = doc(taskCollection, taskId)
         await updateDoc(docRef, {name: task.name, done: task.status})
         setLoading(false)
     } catch (err) {

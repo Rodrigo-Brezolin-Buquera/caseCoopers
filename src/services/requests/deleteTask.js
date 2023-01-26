@@ -1,11 +1,11 @@
-import { doc, deleteDoc } from "firebase/firestore/lite"
+import { doc, deleteDoc,collection } from "firebase/firestore/lite"
 import { database } from "./config"
 
 export const deleteTask = async (userId, taskId, setLoading) => { 
     try {
         setLoading(true)
-        const collection = collection(database, userId)
-        const docRef = doc(collection, taskId)
+        const taskCollection = collection(database, userId)
+        const docRef = doc(taskCollection, taskId)
         await deleteDoc(docRef)
         setLoading(false)
     } catch (err) {

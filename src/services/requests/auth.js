@@ -29,9 +29,9 @@ export const logout = async (setLoading) => {
 export const isLogged =  async(setStatus) => {
   return onAuthStateChanged(auth, (user)=>{
        if(user){
-        setStatus({loggedIn: true})
+        setStatus({loggedIn: true, userId: user.uid})
        } else {
-        setStatus({loggedIn: false})
+        setStatus({loggedIn: false, userId: null})
        }
     })
 }
