@@ -1,29 +1,35 @@
-import {  useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DragDropContext, Draggable } from 'react-beautiful-dnd';
+import { EditableText } from '../../../../../components/EditableText';
 import { StrictModeDroppable } from '../../../../../components/StrictModeDroppable';
 
 
-export const ToDoTaskCard = ({ list }) => {
- const [taskList, setTaskList] = useState(list)
+export const DragAndDropList = ({ list }) => {
+    const [taskList, setTaskList] = useState(list)
 
- useEffect(()=>{},[list])
+    useEffect(() => { }, [list])
 
     const listComponent = taskList?.length && taskList.map((task, index) => {
         return (
             <Draggable key={task.id} draggableId={task.id} index={index}>
                 {(provided) => (
-                    <ul
-                        ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+                    <EditableText
+                        taskName={task.name}
+                        providedRef={provided.innerRef}
+                        draggableProps={{ ...provided.draggableProps }}
+                        dragHandleProps={{ ...provided.dragHandleProps }}
+                        providedPlaceholder={provided.placeholder}
+
+
                     >
-                        {task.name}
-                        {provided.placeholder}
-                    </ul>
+                    </EditableText>
                 )}
             </Draggable>
         )
     })
 
-    return <div>
+    return (
+    <div>
         <DragDropContext>
             <StrictModeDroppable droppableId='tasks' >
                 {(provided) => (
@@ -34,6 +40,6 @@ export const ToDoTaskCard = ({ list }) => {
                 }
             </StrictModeDroppable>
         </DragDropContext>
-           
-    </div>
+
+    </div>)
 }

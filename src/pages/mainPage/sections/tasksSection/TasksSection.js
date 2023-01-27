@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getAllTasks } from "../../../../services/requests/getAllTasks"
 import { useAuth } from "../../../../hooks/useAuth"
-import { ToDoTaskCard } from "./components/ToDoTaskCard"
+import { DragAndDropList } from "./components/DragAndDropList"
 
 export const TasksSection = () => {
     const {userId} = useAuth()
@@ -17,7 +17,7 @@ export const TasksSection = () => {
   
     return (
     <section>
-        <ToDoTaskCard list={filterTasks(true)}/>
+        <DragAndDropList list={filterTasks(true)}/>
          
         
     </section>
