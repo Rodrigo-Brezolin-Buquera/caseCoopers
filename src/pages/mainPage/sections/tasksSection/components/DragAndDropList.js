@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import { EditableText } from '../../../../../components/EditableText';
 import { StrictModeDroppable } from '../../../../../components/StrictModeDroppable';
+import { updateTask } from '../../../../../services/requests/updateTask';
 
 
-export const DragAndDropList = ({ tasks }) => {
+export const DragAndDropList = ({ tasks, userId, setLoading }) => {
     const [doneTasksList, setDoneTasksList] = useState([])
     const [toDoTasksList, setToDoTasksList] = useState([])
 
@@ -35,10 +36,15 @@ export const DragAndDropList = ({ tasks }) => {
 
     }, [tasks])
 
-    
+    function onDragEnd(result) {
+        const doneStatus = result?.destination?.droppableId === "toDo" ? false : true
+        const taskId = result.draggableId
+        updateTask(userId, taskId,doneStatus, setLoading)
+        
+    }
     return (
     <div>
-        <DragDropContext>
+        <DragDropContext onDragEnd={onDragEnd} >
             <StrictModeDroppable droppableId='toDo' >
                 {(provided) => (
                     <ul {...provided.droppableProps} ref={provided.innerRef}>
