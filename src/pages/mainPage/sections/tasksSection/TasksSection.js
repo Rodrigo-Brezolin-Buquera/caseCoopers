@@ -11,13 +11,11 @@ export const TasksSection = () => {
         getAllTasks("uMpfKFlaKcZPCt2tHswkIpirSRX2", setTasks) // depois de fazer login, trocar
     },[])
    
-    const filterTasks = (done) => {
-        return tasks?.length && tasks.filter(i=> i.done === done)
-    }
+ 
   
     return (
     <section>
-        <DragAndDropList list={filterTasks(true)}/>
+        <DragAndDropList tasks={tasks}/>
          
         
     </section>
