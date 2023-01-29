@@ -6,12 +6,13 @@ import { updateTask } from '../../../../../services/requests/updateTask';
 
 
 export const DragAndDropList = ({ tasks, userId, setLoading }) => {
+    const [tasksList, setTasksList] = useState(tasks)
     const [doneTasksList, setDoneTasksList] = useState([])
     const [toDoTasksList, setToDoTasksList] = useState([])
 
 
     const filterTasks = (done) => { 
-        return tasks?.length && tasks
+        return tasksList?.length && tasksList
         .filter(i=> i.done === done)
         .map((task, index) => {
             return (
@@ -31,16 +32,20 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
 
 
     useEffect(() => { 
+        setTasksList(tasks)
         setDoneTasksList(filterTasks(true))
         setToDoTasksList(filterTasks(false))
 
-    }, [tasks])
+    }, [tasksList, tasks])
 
     function onDragEnd(result) {
         const doneStatus = result?.destination?.droppableId === "toDo" ? false : true
         const taskId = result.draggableId
+        const newTaskList = [...tasksList]
+        const index = newTaskList.findIndex(i=> i.id === taskId)
+        newTaskList[index].done = doneStatus
+        setTasksList(newTaskList)
         updateTask(userId, taskId,doneStatus, setLoading)
-        
     }
     return (
     <div>

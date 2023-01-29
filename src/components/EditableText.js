@@ -31,10 +31,11 @@ export const EditableText = (props) => {
 
             >
               {text}
-              {props.providedPlaceholder}
+             
             </div>
           )
         }
+         {props.providedPlaceholder}
       </div>     
     );
 }
