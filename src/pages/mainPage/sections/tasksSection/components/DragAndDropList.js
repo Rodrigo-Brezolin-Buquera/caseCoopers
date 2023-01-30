@@ -5,12 +5,14 @@ import { StrictModeDroppable } from './StrictModeDroppable';
 import { updateTask } from '../../../../../services/requests/updateTask';
 import { TasksCard } from './TasksCard';
 import { Box } from '@chakra-ui/react';
+import { AddTaskInput } from './AddTaskInput';
 
 
 export const DragAndDropList = ({ tasks, userId, setLoading }) => {
     const [tasksList, setTasksList] = useState(tasks)
     const [doneTasksList, setDoneTasksList] = useState([])
     const [toDoTasksList, setToDoTasksList] = useState([])
+   
 
 
     const filterTasks = (done) => {
@@ -63,7 +65,8 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     firstLine={"Take a breath"}
                     secondLine={"Start doing"}
                     userId={userId}
-                >
+                >   
+                    <AddTaskInput userId={userId} setLoading={setLoading} />
                     <StrictModeDroppable droppableId='toDo' >
                         {(provided) => (
                             <ul {...provided.droppableProps} ref={provided.innerRef}>
