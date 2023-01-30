@@ -3,6 +3,8 @@ import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import { EditableText } from './EditableText';
 import { StrictModeDroppable } from './StrictModeDroppable';
 import { updateTask } from '../../../../../services/requests/updateTask';
+import { TasksCard } from './TasksCard';
+import { Box } from '@chakra-ui/react';
 
 
 export const DragAndDropList = ({ tasks, userId, setLoading }) => {
@@ -11,28 +13,29 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
     const [toDoTasksList, setToDoTasksList] = useState([])
 
 
-    const filterTasks = (done) => { 
+    const filterTasks = (done) => {
         return tasksList?.length && tasksList
-        .filter(i=> i.done === done)
-        .map((task, index) => {
-            return (
-            <Draggable key={task.id} draggableId={task.id} index={index}>
-                {(provided) => (
-                    <EditableText
-                        userId={userId}
-                        task={task}
-                        providedRef={provided.innerRef}
-                        draggableProps={{ ...provided.draggableProps }}
-                        dragHandleProps={{ ...provided.dragHandleProps }}
-                        providedPlaceholder={provided.placeholder}
-                        />               
-                )}
-            </Draggable>
-        )})
+            .filter(i => i.done === done)
+            .map((task, index) => {
+                return (
+                    <Draggable key={task.id} draggableId={task.id} index={index}>
+                        {(provided) => (
+                            <EditableText
+                                userId={userId}
+                                task={task}
+                                providedRef={provided.innerRef}
+                                draggableProps={{ ...provided.draggableProps }}
+                                dragHandleProps={{ ...provided.dragHandleProps }}
+                                providedPlaceholder={provided.placeholder}
+                            />
+                        )}
+                    </Draggable>
+                )
+            })
     }
 
 
-    useEffect(() => { 
+    useEffect(() => {
         setTasksList(tasks)
         setDoneTasksList(filterTasks(true))
         setToDoTasksList(filterTasks(false))
@@ -43,32 +46,51 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
         const doneStatus = result?.destination?.droppableId === "toDo" ? false : true
         const taskId = result.draggableId
         const newTaskList = [...tasksList]
-        const index = newTaskList.findIndex(i=> i.id === taskId)
+        const index = newTaskList.findIndex(i => i.id === taskId)
         newTaskList[index].done = doneStatus
         setTasksList(newTaskList)
         updateTask(userId, taskId, newTaskList[index], setLoading)
     }
     return (
-    <div>
-        <DragDropContext onDragEnd={onDragEnd} >
-            <StrictModeDroppable droppableId='toDo' >
-                {(provided) => (
-                    <ul {...provided.droppableProps} ref={provided.innerRef}>
-                        {toDoTasksList}
-                    </ul>
-                )
-                }
-            </StrictModeDroppable>
+        <Box 
+            display={"flex"}
+            w={"100%"}
+        >
+            <DragDropContext onDragEnd={onDragEnd} >
 
-            <StrictModeDroppable droppableId='done' >
-                {(provided) => (
-                    <ul {...provided.droppableProps} ref={provided.innerRef}>
-                        {doneTasksList}
-                    </ul>
-                )
-                }
-            </StrictModeDroppable>
-        </DragDropContext>
+                <TasksCard
+                    cardName={"To-Do"}
+                    firstLine={"Take a breath"}
+                    secondLine={"Start doing"}
+                    userId={userId}
+                >
+                    <StrictModeDroppable droppableId='toDo' >
+                        {(provided) => (
+                            <ul {...provided.droppableProps} ref={provided.innerRef}>
+                                {toDoTasksList}
+                            </ul>
+                        )
+                        }
+                    </StrictModeDroppable>
 
-    </div>)
+                </TasksCard>
+
+                <TasksCard
+                    cardName={"Done"}
+                    firstLine={"Congratulations"}
+                    secondLine={"You have done XXXX tasks"}
+                    userId={userId}
+                >
+                <StrictModeDroppable droppableId='done' >
+                    {(provided) => (
+                        <ul {...provided.droppableProps} ref={provided.innerRef}>
+                            {doneTasksList}
+                        </ul>
+                    )
+                    }
+                </StrictModeDroppable>
+                </TasksCard>
+            </DragDropContext>
+
+        </Box>)
 }
