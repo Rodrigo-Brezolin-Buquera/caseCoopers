@@ -1,9 +1,20 @@
 import { useState } from "react";
+import { updateTask } from "../../../../../services/requests/updateTask";
 
 
 export const EditableText = (props) => {
-    const [text, setText] = useState(props.taskName);
+    const [text, setText] = useState(props.task.name);
     const [showInputEle, setShowInputEle] = useState(false);
+    const [loading, setLoading] = useState(false)
+
+    const handleKeyPress = async (e) => {
+       if(e.key === "Enter"){
+        const editedTask = {name: text, done: props.task.done}
+         await updateTask(props.userId, props.task.id, editedTask, setLoading )
+         setShowInputEle(false)
+       }
+  
+    };
 
     // criar função para que ao fechar, faça uma requisição
     return (
@@ -15,6 +26,7 @@ export const EditableText = (props) => {
               value={text}
               onChange={(e) => setText(e.target.value)}
               onBlur={() => setShowInputEle(false)}
+              onKeyPress={handleKeyPress}
               autoFocus
             />
           ) : (
