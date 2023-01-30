@@ -6,6 +6,7 @@ import { updateTask } from '../../../../../services/requests/updateTask';
 import { TasksCard } from './TasksCard';
 import { Box } from '@chakra-ui/react';
 import { AddTaskInput } from './AddTaskInput';
+import { DeleteTaskButton } from './DeleteTaskButton';
 
 
 export const DragAndDropList = ({ tasks, userId, setLoading }) => {
@@ -22,14 +23,21 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 return (
                     <Draggable key={task.id} draggableId={task.id} index={index}>
                         {(provided) => (
-                            <EditableText
+                            <Box display={"flex"}>
+                               <EditableText
                                 userId={userId}
                                 task={task}
                                 providedRef={provided.innerRef}
                                 draggableProps={{ ...provided.draggableProps }}
                                 dragHandleProps={{ ...provided.dragHandleProps }}
                                 providedPlaceholder={provided.placeholder}
-                            />
+                            /> 
+                                <DeleteTaskButton
+                                userId={userId}
+                                taskId={task.id}
+                                />
+                            </Box>
+                            
                         )}
                     </Draggable>
                 )

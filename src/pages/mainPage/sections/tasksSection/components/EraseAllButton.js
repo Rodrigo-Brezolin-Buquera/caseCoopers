@@ -8,10 +8,10 @@ export const EraseAllButton = ({ loading, action }) => {
                 :
                 <Button
                     h={"30px"}
-                    bg={"brand.600"}
+                    bg={"black"}
                     borderRadius={"25px"}
                     onClick={action}>
-                    <Text>Erase All</Text>
+                    <Text color={"white"}>Erase All</Text>
                 </Button>
             }
         </Box>

@@ -1,6 +1,6 @@
 import { Card, CardHeader, Heading, CardBody, StackDivider, Text, Stack, Box,  Button } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
-import { EraseAllButton } from "../../../../../components/EraseAllButton"
+import { EraseAllButton } from "./EraseAllButton"
 import { deleteTaskByStatus } from "../../../../../services/requests/deleteTaskByStatus"
 
 export const TasksCard = (props) => {
