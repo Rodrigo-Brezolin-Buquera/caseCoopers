@@ -4,7 +4,6 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 export const ToDoListHeading = () => {
     return (
         <Box
-            w={"120%"}
             h={"180px"}
             bg={"brand.300"}
             marginBottom={"2em"}
