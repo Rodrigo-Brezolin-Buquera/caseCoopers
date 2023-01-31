@@ -79,7 +79,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     <StrictModeDroppable droppableId='toDo' >
                         {(provided) => (
                             <ul {...provided.droppableProps} ref={provided.innerRef}>
-                                {toDoTasksList}
+                                {toDoTasksList.length ? toDoTasksList : null}
                             </ul>
                         )
                         }
@@ -96,7 +96,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 <StrictModeDroppable droppableId='done' >
                     {(provided) => (
                         <ul {...provided.droppableProps} ref={provided.innerRef}>
-                            {doneTasksList}
+                            {doneTasksList.length ? doneTasksList : null}
                         </ul>
                     )
                     }
