@@ -10,8 +10,9 @@ export const Footer = () => {
             flexDirection={"column"}
             justifyContent={"center"}
             alignItems={"center"}
-            zIndex={"-1"}
             mt={"2em"}
+            clipPath={"polygon(0 10%, 100% 0, 100% 100%, 0 100%)"}
+
         >
             <Text color={"brand.400"}>Need help?</Text>
             <Text color={"brand.400"}>coopers@coopers.pro</Text>
@@ -21,7 +22,8 @@ export const Footer = () => {
                 w={"300px"}
                 background={"brand.100"}
                 position={"absolute"}
-                bottom={"0"}        
+                bottom={"0"}    
+                clipPath={"polygon(0 10%, 100% 0, 100% 100%, 0 100%)"}    
             />
         </Box>
     )

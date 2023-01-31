@@ -11,6 +11,7 @@ export const MainPage = () => {
             minH={"100vh"}
             display={"flex"}
             flexDirection={"column"}
+            bg={"brand.400"}
         >
 
             <TasksSection />

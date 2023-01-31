@@ -17,7 +17,8 @@ export const TasksCard = (props) => {
     useEffect(() => { }, [cardLoading])
 
     return (
-        <Card w={"380px"} minH={"500px"} alignItems={"center"} >
+        <Card w={"380px"} minH={"500px"} alignItems={"center"}  bg={"brand.400"}
+        >
             <CardHeader>
                 <Heading size='md'>{props.cardName}</Heading>
             </CardHeader>

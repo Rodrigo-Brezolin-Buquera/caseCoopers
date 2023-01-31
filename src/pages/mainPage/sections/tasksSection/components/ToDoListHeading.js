@@ -7,10 +7,10 @@ export const ToDoListHeading = () => {
             h={"180px"}
             bg={"brand.300"}
             marginBottom={"2em"}
-            transform="rotate(-5deg)"
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
+            clipPath={"polygon(0 15%, 100% 0, 100% 85%, 0 100%)"}
         >
             <Box
                 w={"50%"}
@@ -19,7 +19,6 @@ export const ToDoListHeading = () => {
                 flexDirection={"column"}
                 justifyContent={"center"}
                 alignItems={"center"}
-                transform="rotate(5deg)"
 
             >
                 <Heading color={"brand.400"}  >To-do List </Heading>
