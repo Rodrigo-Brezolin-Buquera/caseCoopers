@@ -11,6 +11,10 @@ export const MainPage = () => {
             display={"flex"}
             flexDirection={"column"}
         >
+
+        <Box w={"100%"}>
+
+        </Box>
             <TasksSection />
         </Box>
     )

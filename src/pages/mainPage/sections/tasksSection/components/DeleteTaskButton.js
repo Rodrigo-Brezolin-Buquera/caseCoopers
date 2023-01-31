@@ -5,12 +5,10 @@ import { useState } from "react"
 export const DeleteTaskButton = (props) => {
     const [loading, setLoading] = useState(false)
 
-
     const deleteTask = async() => {
         props.setLoading(true)
         await deleteTaskById(props.userId, props.taskId, setLoading)
         props.setLoading(false)
-
     }
 
     return (

@@ -38,11 +38,11 @@ export const EditableText = (props) => {
             {...props.dragHandleProps}
           >
             {text}
-
+            {props.providedPlaceholder}
           </Text>
         )
       }
-      {props.providedPlaceholder}
+     
     </div>
   );
 }

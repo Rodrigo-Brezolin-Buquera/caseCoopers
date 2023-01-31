@@ -42,7 +42,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
         const newTaskList = [...tasksList]
         const index = newTaskList.findIndex(i => i.id === taskId)
         newTaskList[index].done = doneStatus
-        setTasksList(newTaskList)
+         setTasksList(newTaskList)
         updateTask(userId, taskId, newTaskList[index], setLoading)
     }
     return (

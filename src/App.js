@@ -1,9 +1,10 @@
 import { MainPage } from "./pages/mainPage/MainPage";
 import { ChakraProvider } from '@chakra-ui/react'
+import {theme} from "../src/constants/theme"
 
 function App() {
   return (
-    <ChakraProvider >
+    <ChakraProvider theme={theme} >
       <MainPage/>
     </ChakraProvider>
   );
