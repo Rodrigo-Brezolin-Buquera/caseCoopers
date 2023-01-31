@@ -2,12 +2,15 @@ import { CircularProgress, Button, Box, Text } from "@chakra-ui/react"
 import { deleteTaskById } from "../../../../../services/requests/deleteTaskById"
 import { useState } from "react"
 
-export const DeleteTaskButton = ({ userId, taskId }) => {
+export const DeleteTaskButton = (props) => {
     const [loading, setLoading] = useState(false)
 
 
     const deleteTask = async() => {
-        await deleteTaskById(userId, taskId, setLoading)
+        props.setLoading(true)
+        await deleteTaskById(props.userId, props.taskId, setLoading)
+        props.setLoading(false)
+
     }
 
     return (

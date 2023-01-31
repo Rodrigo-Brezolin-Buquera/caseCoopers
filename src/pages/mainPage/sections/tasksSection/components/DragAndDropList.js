@@ -59,8 +59,6 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     secondLine={"Start doing"}
                     userId={userId}
                     setLoading={setLoading}
-                    
-
                 >
                     <AddTaskInput userId={userId} setLoading={setLoading} />
                     <StrictModeDroppable droppableId='toDo' >
@@ -80,8 +78,6 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     secondLine={`You have done ${doneTasksList?.length || 0} tasks`}
                     userId={userId}
                     setLoading={setLoading}
-                    
-
                 >
                     <StrictModeDroppable droppableId='done' >
                         {(provided) => (

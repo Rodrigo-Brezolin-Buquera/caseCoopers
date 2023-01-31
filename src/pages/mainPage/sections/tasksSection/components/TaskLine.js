@@ -33,6 +33,7 @@ export const TaskLine = ({ index, userId, task, setLoading }) => {
                     <DeleteTaskButton
                         userId={userId}
                         taskId={task.id}
+                        setLoading={setLoading}
                     />
                 </Box>
 
