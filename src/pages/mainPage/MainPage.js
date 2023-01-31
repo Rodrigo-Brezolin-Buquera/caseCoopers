@@ -2,6 +2,7 @@ import { TasksSection } from "./sections/tasksSection/TasksSection"
 import React from "react";
 import { Box, Center } from "@chakra-ui/react";
 import { Footer } from "./sections/footer/footer";
+import { Header } from "./sections/header/Header.js";
 
 export const MainPage = () => {
     return (
@@ -13,7 +14,7 @@ export const MainPage = () => {
             flexDirection={"column"}
             bg={"brand.400"}
         >
-
+            <Header/>
             <TasksSection />
 
             <Footer/>

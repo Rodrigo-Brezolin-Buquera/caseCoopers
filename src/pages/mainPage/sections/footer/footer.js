@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react"
 
 export const Footer = () => {
     return (
+    <footer>
         <Box
             w={"100%"}
             h={"140px"}
@@ -22,9 +23,9 @@ export const Footer = () => {
                 w={"300px"}
                 background={"brand.100"}
                 position={"absolute"}
-                bottom={"0"}    
-                clipPath={"polygon(0 10%, 100% 0, 100% 100%, 0 100%)"}    
+                bottom={"0"}
+                clipPath={"polygon(0 10%, 100% 0, 100% 100%, 0 100%)"}
             />
         </Box>
-    )
+    </footer>)
 }
