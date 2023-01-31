@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
-import { DragDropContext, Draggable } from 'react-beautiful-dnd';
-import { EditableText } from './EditableText';
+import { DragDropContext } from 'react-beautiful-dnd';
 import { StrictModeDroppable } from './StrictModeDroppable';
 import { updateTask } from '../../../../../services/requests/updateTask';
 import { TasksCard } from './TasksCard';
 import { Box } from '@chakra-ui/react';
 import { AddTaskInput } from './AddTaskInput';
-import { DeleteTaskButton } from './DeleteTaskButton';
+import { TaskLine } from './TaskLine';
 
 
 export const DragAndDropList = ({ tasks, userId, setLoading }) => {
     const [tasksList, setTasksList] = useState(tasks)
     const [doneTasksList, setDoneTasksList] = useState([])
     const [toDoTasksList, setToDoTasksList] = useState([])
-   
+
 
 
     const filterTasks = (done) => {
@@ -21,25 +20,13 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
             .filter(i => i.done === done)
             .map((task, index) => {
                 return (
-                    <Draggable key={task.id} draggableId={task.id} index={index}>
-                        {(provided) => (
-                            <Box display={"flex"} alignItems="center" justifyContent={"space-between"}>
-                               <EditableText
-                                userId={userId}
-                                task={task}
-                                providedRef={provided.innerRef}
-                                draggableProps={{ ...provided.draggableProps }}
-                                dragHandleProps={{ ...provided.dragHandleProps }}
-                                providedPlaceholder={provided.placeholder}
-                            /> 
-                                <DeleteTaskButton
-                                userId={userId}
-                                taskId={task.id}
-                                />
-                            </Box>
-                            
-                        )}
-                    </Draggable>
+                    <TaskLine
+                        key={task.id}
+                        userId={userId}
+                        task={task}
+                        index={index}
+                        setLoading={setLoading}
+                    />
                 )
             })
     }
@@ -52,7 +39,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
 
     }, [tasksList, tasks])
 
-    function onDragEnd(result) {
+    const onDragEnd = (result) => {
         const doneStatus = result?.destination?.droppableId === "toDo" ? false : true
         const taskId = result.draggableId
         const newTaskList = [...tasksList]
@@ -62,7 +49,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
         updateTask(userId, taskId, newTaskList[index], setLoading)
     }
     return (
-        <Box 
+        <Box
             display={"flex"}
             w={"100%"}
             gap={"2em"}
@@ -74,7 +61,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     firstLine={"Take a breath"}
                     secondLine={"Start doing"}
                     userId={userId}
-                >   
+                >
                     <AddTaskInput userId={userId} setLoading={setLoading} />
                     <StrictModeDroppable droppableId='toDo' >
                         {(provided) => (
@@ -93,14 +80,14 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     secondLine={"You have done XXXX tasks"}
                     userId={userId}
                 >
-                <StrictModeDroppable droppableId='done' >
-                    {(provided) => (
-                        <ul {...provided.droppableProps} ref={provided.innerRef}>
-                            {doneTasksList.length ? doneTasksList : null}
-                        </ul>
-                    )
-                    }
-                </StrictModeDroppable>
+                    <StrictModeDroppable droppableId='done' >
+                        {(provided) => (
+                            <ul {...provided.droppableProps} ref={provided.innerRef}>
+                                {doneTasksList.length ? doneTasksList : null}
+                            </ul>
+                        )
+                        }
+                    </StrictModeDroppable>
                 </TasksCard>
             </DragDropContext>
 
