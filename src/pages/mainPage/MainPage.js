@@ -1,6 +1,7 @@
 import { TasksSection } from "./sections/tasksSection/TasksSection"
 import React from "react";
 import { Box, Center } from "@chakra-ui/react";
+import { Footer } from "./sections/footer/footer";
 
 export const MainPage = () => {
     return (
@@ -13,6 +14,8 @@ export const MainPage = () => {
         >
 
             <TasksSection />
+
+            <Footer/>
         </Box>
     )
 }
