@@ -15,14 +15,14 @@ export const TasksCard = (props) => {
     useEffect(()=>{},[loading, eraseAllTasks])
 
     return (
-        <Card w={"300px"} alignItems={"center"} >
+        <Card w={"350px"} minH={"500px"} alignItems={"center"} >
             <CardHeader>
                 <Heading size='md'>{props.cardName}</Heading>
             </CardHeader>
 
-            <CardBody>
-                <Stack divider={<StackDivider />} spacing='4'>
-                    <Box >
+            <CardBody w={"100%"} display={"flex"} flexDirection={"column"} gap={"2em"} justifyContent={"align-self"}>
+                
+                    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} >
                         <Text size='xs' >
                             {props.firstLine}
                         </Text>
@@ -30,13 +30,13 @@ export const TasksCard = (props) => {
                             {props.secondLine}
                         </Text>
                     </Box>
-                    <Box >
+                    <Box minH={"300px"} >
                         {props.children}
                     </Box>
-                    <Box>
+                   
                        <EraseAllButton loading={loading}  action={eraseAllTasks}/>
-                    </Box>
-                </Stack>
+                    
+                
             </CardBody>
         </Card>)
 }

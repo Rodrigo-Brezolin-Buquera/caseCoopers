@@ -1,3 +1,4 @@
+import { Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { createTask } from "../../../../../services/requests/createTask";
 
@@ -14,8 +15,9 @@ export const AddTaskInput = ({userId, setLoading }) => {
 
    
     return (
-            <input 
+            <Input 
               type="text"
+              variant='unstyled'
               value={text}
               onChange={(e) => setText(e.target.value)}
               onKeyPress={handleKeyPress}

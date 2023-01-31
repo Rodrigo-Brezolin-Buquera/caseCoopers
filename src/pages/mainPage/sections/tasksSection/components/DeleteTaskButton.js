@@ -18,6 +18,8 @@ export const DeleteTaskButton = ({ userId, taskId }) => {
                 <Button
                     onClick={deleteTask}
                     borderRadius={"25px"}
+                    variant='ghost'
+                    h={"2em"}
                 >
                     <Text>Delete</Text>
                 </Button>

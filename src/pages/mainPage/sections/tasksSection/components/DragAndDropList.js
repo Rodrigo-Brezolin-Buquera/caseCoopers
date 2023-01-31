@@ -23,7 +23,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 return (
                     <Draggable key={task.id} draggableId={task.id} index={index}>
                         {(provided) => (
-                            <Box display={"flex"}>
+                            <Box display={"flex"} alignItems="center" justifyContent={"space-between"}>
                                <EditableText
                                 userId={userId}
                                 task={task}
@@ -65,6 +65,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
         <Box 
             display={"flex"}
             w={"100%"}
+            gap={"2em"}
         >
             <DragDropContext onDragEnd={onDragEnd} >
 

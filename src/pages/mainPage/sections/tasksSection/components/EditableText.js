@@ -1,3 +1,4 @@
+import { Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { updateTask } from "../../../../../services/requests/updateTask";
 
@@ -16,12 +17,11 @@ export const EditableText = (props) => {
   
     };
 
-    // criar função para que ao fechar, faça uma requisição
     return (
         <div>
         {
           showInputEle ? (
-            <input 
+            <Input 
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
