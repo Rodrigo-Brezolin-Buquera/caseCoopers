@@ -1,6 +1,6 @@
 import { TasksSection } from "./sections/tasksSection/TasksSection"
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 
 export const MainPage = () => {
     return (
@@ -12,9 +12,6 @@ export const MainPage = () => {
             flexDirection={"column"}
         >
 
-        <Box w={"100%"}>
-
-        </Box>
             <TasksSection />
         </Box>
     )

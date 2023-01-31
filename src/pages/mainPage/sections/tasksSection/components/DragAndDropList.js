@@ -50,6 +50,8 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
             display={"flex"}
             w={"100%"}
             gap={"2em"}
+            justifyContent={"center"}
+            flexWrap={"wrap"}
         >
             <DragDropContext onDragEnd={onDragEnd} >
 
