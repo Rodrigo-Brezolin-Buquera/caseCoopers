@@ -4,15 +4,18 @@ import { EraseAllButton } from "./EraseAllButton"
 import { deleteTaskByStatus } from "../../../../../services/requests/deleteTaskByStatus"
 
 export const TasksCard = (props) => {
-    const [loading, setLoading] = useState(false)
+    const [cardLoading, setCardLoading] = useState(false)
 
 
     const eraseAllTasks = () => {
         const status = props.cardName === "Done" ? true : false
-        deleteTaskByStatus(props.userId,status, setLoading )
+        deleteTaskByStatus(props.userId,status, props.setLoading )
     }
     
-    useEffect(()=>{},[loading, eraseAllTasks])
+    useEffect(()=>{
+        console.log("2")
+      
+    },[cardLoading, props.setLoading])
 
     return (
         <Card w={"350px"} minH={"500px"} alignItems={"center"} >
@@ -34,7 +37,7 @@ export const TasksCard = (props) => {
                         {props.children}
                     </Box>
                    
-                       <EraseAllButton loading={loading}  action={eraseAllTasks}/>
+                       <EraseAllButton loading={cardLoading}  action={eraseAllTasks}/>
                     
                 
             </CardBody>

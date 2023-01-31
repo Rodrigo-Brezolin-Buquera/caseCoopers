@@ -13,8 +13,6 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
     const [doneTasksList, setDoneTasksList] = useState([])
     const [toDoTasksList, setToDoTasksList] = useState([])
 
-
-
     const filterTasks = (done) => {
         return tasksList?.length && tasksList
             .filter(i => i.done === done)
@@ -30,7 +28,6 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 )
             })
     }
-
 
     useEffect(() => {
         setTasksList(tasks)
@@ -61,6 +58,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     firstLine={"Take a breath"}
                     secondLine={"Start doing"}
                     userId={userId}
+                    setLoading={setLoading}
                 >
                     <AddTaskInput userId={userId} setLoading={setLoading} />
                     <StrictModeDroppable droppableId='toDo' >
@@ -77,8 +75,9 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 <TasksCard
                     cardName={"Done"}
                     firstLine={"Congratulations"}
-                    secondLine={"You have done XXXX tasks"}
+                    secondLine={`You have done ${doneTasksList?.length || 0} tasks`}
                     userId={userId}
+                    setLoading={setLoading}
                 >
                     <StrictModeDroppable droppableId='done' >
                         {(provided) => (

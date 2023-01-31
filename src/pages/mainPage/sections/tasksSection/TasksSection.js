@@ -8,7 +8,7 @@ export const TasksSection = () => {
     const [tasks, setTasks] = useState([])
     const [loading, setLoading] = useState(false)
 
-
+    console.log("inicial",loading)
     useEffect(()=>{
         getAllTasks("uMpfKFlaKcZPCt2tHswkIpirSRX2", setTasks) // depois de fazer login, trocar
     },[loading])
