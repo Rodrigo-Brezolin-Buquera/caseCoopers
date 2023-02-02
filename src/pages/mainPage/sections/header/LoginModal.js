@@ -4,7 +4,7 @@ import {
     Button, ModalBody, ModalOverlay, ModalContent, ModalCloseButton, Heading
 } from "@chakra-ui/react"
 import { useForm } from "react-hook-form";
-import { LoginIcon } from "../../../../components/LoginIcom";
+import { LoginIcon } from "../../../../components/LoginIcon";
 
 export const LoginModal = ({ isOpen, onClose }) => {
     const [loading, setLoading] = useState(false)
@@ -29,8 +29,10 @@ export const LoginModal = ({ isOpen, onClose }) => {
         <Modal isOpen={isOpen} onClose={onClose}   >
             <ModalOverlay />
             <ModalContent minW={"600px"}  >
-                <ModalCloseButton > close </ModalCloseButton >
-                <ModalBody >
+                <ModalCloseButton size={"md"} >
+                    <Text fontWeight={"bold"} >close</Text>  
+                     </ModalCloseButton >
+                <ModalBody p={"3em"} >
                     <Box display={"flex"} justifyContent={"start"}>
                         <LoginIcon />
                         <Box
@@ -39,9 +41,9 @@ export const LoginModal = ({ isOpen, onClose }) => {
                             justifyContent={"center"}
                             alignItems={'start'}
                         >
-                            <Heading>Sign in </Heading>
+                            <Heading size={"2xl"}>Sign in </Heading>
 
-                            <Heading color={"brand.100"} size={"md"}>to access your list </Heading>
+                            <Heading color={"brand.100"} size={"lg"}>to access your list </Heading>
                         </Box>
 
                     </Box>
@@ -58,7 +60,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                 gap={"0.5em"}
 
                             >
-                                <Box display={"flex"} alignItems={'flex-start'} w={"300px"}>
+                                <Box display={"flex"} alignItems={'flex-start'} w={"250px"}>
                                     <Text fontWeight={"bold"}  >User:</Text>
                                 </Box>
                                 <Input
@@ -69,9 +71,9 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     })}
                                     variant="outline"
                                     borderRadius={"2px"}
-                                    w={"300px"}
+                                    w={"250px"}
                                 />
-                                <Box display={"flex"} alignItems={'flex-start'} w={"300px"}>
+                                <Box display={"flex"} alignItems={'flex-start'} w={"250px"}>
                                     <Text fontWeight={"bold"}  >Password:</Text>
                                 </Box>
 
@@ -84,7 +86,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     variant="outline"
                                     type='password'
                                     borderRadius={"2px"}
-                                    w={"300px"}
+                                    w={"250px"}
                                 />
 
                                 <Button
@@ -93,13 +95,13 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     type="submit"
                                     bg={"brand.100"}
                                     borderRadius={'0'}
-                                    w={"300px"}
+                                    w={"200px"}
 
                                 >
                                     {loading ?
                                         <CircularProgress isIndeterminate color={"brand.400"} size="30px" />
                                         :
-                                        <Text color={"brand.300"}>
+                                        <Text color={"brand.400"}>
                                             Sign in
                                         </Text>}
                                 </Button>
