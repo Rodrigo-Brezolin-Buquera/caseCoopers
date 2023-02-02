@@ -5,7 +5,6 @@ export const EmailImage = () => {
     return (
         <Box w={"50px"} h={"50px"} backgroundColor={"brand.100"} >
             <Img
-                
                 src={EmailIcon}
                 alt={"email icon"}
             />

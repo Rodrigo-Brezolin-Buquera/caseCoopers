@@ -12,8 +12,8 @@ export const ContactCard = () => {
             backgroundColor={"Background.400"}
             minW={"380px"}
             position={"relative"}
-            pt={"50px"}
             mt={"70px"}
+            p={"1em"}
         >
             <AvatarImage />
             <CardHeader
@@ -22,11 +22,17 @@ export const ContactCard = () => {
                 justifyContent={"start"}
                 w={'100%'}
                 pb={"0"}
+                mt={"40px"}
             >
                 <EmailImage />
                 <Box>
-                    <Heading size='md'> Get In</Heading>
-                    <Heading size='md'> Touch</Heading>
+                    <Heading
+                        size='md'
+                        fontWeight={"normal"}
+                        letterSpacing={"widest"}
+                    > Get In</Heading>
+                    <Heading size='md' letterSpacing={"widest"}> Touch</Heading>
+
                 </Box>
 
             </CardHeader>

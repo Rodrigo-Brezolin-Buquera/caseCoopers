@@ -39,7 +39,7 @@ export const ContactForm = () => {
                         gap={"0.5em"}
                     >
 
-                        <Text >Your name*</Text>
+                        <Text >Your name</Text>
                         <Input
                             id="name"
                             placeholder="Type your name here"
@@ -95,24 +95,23 @@ export const ContactForm = () => {
                             borderColor={"black"}
                         />
 
-
-
                         <Button
                             mt={4}
                             isLoading={isSubmitting}
                             type="submit"
                             bg={"brand.100"}
+                            borderRadius={"4px"}
                         >
 
-                            <Text >
+                            <Text fontSize={"sm"} color={"brand.400"} >
                                 SEND NOW
                             </Text>
                         </Button>
                     </Box>
-                    <FormErrorMessage>
+                    <FormErrorMessage display={"flex"} flexDirection={"column"} alignItems={"center"}>
                         {errors.name && errors.name.message}
                         <br />
-                        {errors.password && errors.password.message}
+                        {errors.email && errors.email.message}
                         <br />
                         {errors.telephone && errors.telephone.message}
                         <br />
