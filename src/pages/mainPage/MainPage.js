@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Center } from "@chakra-ui/react";
 import { Footer } from "./sections/footer/footer";
 import { Header } from "./sections/header/Header.js";
-import { HomeSection } from "./homeSection/HomeSection";
+import { HomeSection } from "./sections/homeSection/HomeSection";
 
 export const MainPage = () => {
     return (

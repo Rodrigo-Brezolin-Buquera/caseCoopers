@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
-import { PhotoContainer } from "./components/PhotoContainer";
+import { PhotoContaine, PhotoContainer } from "./components/PhotoContainer";
 import { TextContainer } from "./components/TextContainer";
-import Arrow from "../../../assets/Arrow.png"
+import Arrow from "../../../../assets/Arrow.png"
 
 export const HomeSection = () => {
     return (
@@ -22,7 +22,7 @@ export const HomeSection = () => {
                     <Image w={"30px"} src={Arrow} objectFit={"contain"} />
                 </Box>
 
-                <PhotoContainer />
+                <PhotoContaine/>
 
             </Box>
         </section>
