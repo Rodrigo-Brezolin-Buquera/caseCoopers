@@ -1,7 +1,10 @@
-import { Box, Button, Text} from "@chakra-ui/react"
+import { Box, Button, Text, useDisclosure} from "@chakra-ui/react"
 import { LogoImage } from "../../../../components/LogoImage"
+import { LoginModal } from "./LoginModal"
 
 export const Header = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <header>
             <Box
@@ -12,10 +15,12 @@ export const Header = () => {
                 padding={" 10px 80px 0 80px"}
             >
                 <LogoImage/>
-                <Button bg={"brand.300"} >
+                <Button bg={"brand.300"} onClick={onOpen} >
                     <Text color={"brand.400"}>entrar</Text>
                 </Button>
             </Box>
+
+            <LoginModal isOpen={isOpen} onClose={onClose}/>
         </header>
     )
 }
