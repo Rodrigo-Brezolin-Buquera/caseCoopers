@@ -7,6 +7,7 @@ export const EmailImage = () => {
             <Img
                 
                 src={EmailIcon}
+                alt={"email icon"}
             />
         </Box>
 

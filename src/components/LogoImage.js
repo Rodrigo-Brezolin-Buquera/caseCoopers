@@ -8,6 +8,7 @@ export const LogoImage = () => {
             h={"70px"}
             objectFit={"cover"}
             src={Logo}
+            alt={"logo"}
         />
     )
 }
