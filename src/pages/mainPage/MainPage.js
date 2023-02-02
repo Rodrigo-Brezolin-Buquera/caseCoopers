@@ -3,6 +3,7 @@ import React from "react";
 import { Box, Center } from "@chakra-ui/react";
 import { Footer } from "./sections/footer/footer";
 import { Header } from "./sections/header/Header.js";
+import { HomeSection } from "./homeSection/HomeSection";
 
 export const MainPage = () => {
     return (
@@ -15,6 +16,7 @@ export const MainPage = () => {
             bg={"brand.400"}
         >
             <Header/>
+            <HomeSection/>
             <TasksSection />
 
             <Footer/>
