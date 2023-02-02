@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer>
         <Box
             w={"100%"}
-            h={"140px"}
+            h={"240px"}
             bg={"brand.300"}
             display={"flex"}
             flexDirection={"column"}
@@ -13,14 +13,14 @@ export const Footer = () => {
             alignItems={"center"}
             mt={"2em"}
             clipPath={"polygon(0 10%, 100% 0, 100% 100%, 0 100%)"}
-
+            gap={"0.3em"}
         >
-            <Text color={"brand.400"}>Need help?</Text>
-            <Text color={"brand.400"}>coopers@coopers.pro</Text>
-            <Text color={"brand.400"}>© 2021 Coopers. All rights reserved.</Text>
+            <Text fontSize={"2xl"} fontWeight={"bold"} color={"brand.400"}>Need help?</Text>
+            <Text fontSize={"xl"} fontWeight={"bold"} color={"brand.400"}>coopers@coopers.pro</Text>
+            <Text fontSize={"small"}color={"brand.400"}>© 2021 Coopers. All rights reserved.</Text>
             <Box
-                h={"20px"}
-                w={"300px"}
+                h={"30px"}
+                w={"30%"}
                 background={"brand.100"}
                 position={"absolute"}
                 bottom={"0"}
