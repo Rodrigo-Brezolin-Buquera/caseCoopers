@@ -4,7 +4,7 @@ import {
     FormControl,
     Box,
     Input,
-    Button, Text
+    Button, Text, Textarea
 } from "@chakra-ui/react";
 
 
@@ -84,7 +84,7 @@ export const ContactForm = () => {
 
 
                         <Text  >Message*</Text>
-                        <Input
+                        <Textarea
                             id="message"
                             placeholder="Type what you want to say to us"
                             {...register("message", {
@@ -93,6 +93,8 @@ export const ContactForm = () => {
                             variant="outline"
                             borderRadius={"4px"}
                             borderColor={"black"}
+                            h={"150px"}
+                          
                         />
 
                         <Button
