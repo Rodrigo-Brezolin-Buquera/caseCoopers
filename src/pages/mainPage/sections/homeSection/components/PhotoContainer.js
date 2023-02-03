@@ -3,7 +3,7 @@ import { Box, Image } from "@chakra-ui/react";
 import Triangle from "../../../../../assets/Triangle.png"
 import Photo1 from "../../../../../assets/Photo1.png"
 
-export const PhotoContaine = () => {
+export const PhotoContainer = () => {
     return (
         <Box
             display={"flex"}
@@ -11,6 +11,7 @@ export const PhotoContaine = () => {
             alignItems={"center"}
             h={"50%"}
             maxH={"70%"}
+            position={"relative"}
 
         >
             <Image maxH={"500px"} src={Triangle} objectFit={"fill"} />

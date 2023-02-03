@@ -83,7 +83,7 @@ export const ContactForm = () => {
                         </Box>
 
 
-                        <Text  >Message*</Text>
+                        <Text>Message*</Text>
                         <Textarea
                             id="message"
                             placeholder="Type what you want to say to us"

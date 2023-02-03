@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Image } from "@chakra-ui/react";
-import { PhotoContaine, PhotoContainer } from "./components/PhotoContainer";
+import { Box } from "@chakra-ui/react";
+import { PhotoContainer } from "./components/PhotoContainer";
 import { TextContainer } from "./components/TextContainer";
-import Arrow from "../../../../assets/Arrow.png"
 
 export const HomeSection = () => {
     return (
@@ -11,20 +10,16 @@ export const HomeSection = () => {
                 w={"100%"}
                 h={"100%"}
                 display={"flex"}
+                flexDirection={["column", "column", "row"]}
                 justifyContent={"space-between"}
                 bg={"brand.400"}
+                position={"relative"}
             >
                 <TextContainer />
-                <Box 
-                    display={"flex"}
-                    alignItems={"end"}
-                >
-                    <Image w={"30px"} src={Arrow} objectFit={"contain"} />
-                </Box>
-
-                <PhotoContaine/>
+                <PhotoContainer />
 
             </Box>
+            
         </section>
 
     )
