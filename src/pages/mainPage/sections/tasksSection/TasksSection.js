@@ -3,6 +3,7 @@ import { getAllTasks } from "../../../../services/requests/getAllTasks"
 import { useAuth } from "../../../../hooks/useAuth"
 import { DragAndDropList } from "./components/DragAndDropList"
 import { ToDoListHeading } from "./components/ToDoListHeading"
+import { Box } from "@chakra-ui/react"
 
 export const TasksSection = () => {
     const { userId } = useAuth()
@@ -17,12 +18,15 @@ export const TasksSection = () => {
 
     return (
         <section>
-            <ToDoListHeading />
-            <DragAndDropList
-                tasks={tasks}
-                userId={"uMpfKFlaKcZPCt2tHswkIpirSRX2"}
-                setLoading={setLoading}
-            />
+            <Box mb={"4em"}>
+                <ToDoListHeading />
+                <DragAndDropList
+                    tasks={tasks}
+                    userId={"uMpfKFlaKcZPCt2tHswkIpirSRX2"}
+                    setLoading={setLoading}
+                />
+            </Box>
+
 
 
         </section>

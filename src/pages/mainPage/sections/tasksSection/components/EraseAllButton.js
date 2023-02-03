@@ -7,12 +7,13 @@ export const EraseAllButton = ({ loading, action }) => {
                 <CircularProgress isIndeterminate color={"black"} size="30px" />
                 :
                 <Button
-                    h={"30px"}
+                    h={"64px"}
                     w={"70%"}
                     bg={"black"}
-                    borderRadius={"5px"}
-                    onClick={action}>
-                    <Text color={"white"}>Erase All</Text>
+                    borderRadius={"10px"}
+                    onClick={action}
+                    >
+                    <Text color={"white"} fontSize={"xl"} letterSpacing={"wide"}>erase all</Text>
                 </Button>
             }
         </Box>

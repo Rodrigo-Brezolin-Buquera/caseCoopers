@@ -31,6 +31,8 @@ export const EditableText = (props) => {
           />
         ) : (
           <Text
+            fontSize={"xl"}
+            m={"0.2em"}
             pb={"0.2em"}
             onDoubleClick={() => setShowInputEle(true)}
             ref={props.providedRef}
@@ -42,7 +44,7 @@ export const EditableText = (props) => {
           </Text>
         )
       }
-     
+
     </div>
   );
 }

@@ -17,8 +17,12 @@ export const TaskLine = ({ index, userId, task, setLoading }) => {
                 <Box display={"flex"} alignItems="center" justifyContent={"space-between"}>
                     <Box display={"flex"} gap={"0.5em"} alignItems={"center"}>
                         <Checkbox
+                            variant={"circle"}
+                            size={"lg"}
                             isChecked={task.done}
                             onChange={changeStatus}
+                            colorScheme= {task.done ? "green" : "orange"}
+
                         />
                         <EditableText
                             userId={userId}

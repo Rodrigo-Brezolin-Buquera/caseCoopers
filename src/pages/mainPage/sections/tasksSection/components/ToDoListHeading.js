@@ -1,16 +1,16 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 
 
 export const ToDoListHeading = () => {
     return (
         <Box
-            h={"180px"}
+            h={"280px"}
             bg={"brand.300"}
             marginBottom={"2em"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            clipPath={"polygon(0 15%, 100% 0, 100% 85%, 0 100%)"}
+            clipPath={"polygon(0 20%, 100% 0, 100% 80%, 0 100%)"}
         >
             <Box
                 w={"50%"}
@@ -21,10 +21,18 @@ export const ToDoListHeading = () => {
                 alignItems={"center"}
 
             >
-                <Heading color={"brand.400"}  >To-do List </Heading>
+                <Heading fontSize={"5xl"} color={"brand.400"}  >To-do List </Heading>
+                <Divider 
+                w={"200px"} 
+                borderColor={"brand.100"} 
+                borderWidth={"0.1em"}
+                mb={"0.1em"}
+                />
                 <Text 
                 color={"brand.400"}
                 textAlign={"center"}
+                w={"600px"}
+                fontSize={"xl"}
                 > Drag and drop to set your main priorities, check when done and create what´s new.
                 </Text>
             </Box>
