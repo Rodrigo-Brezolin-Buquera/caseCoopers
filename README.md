@@ -17,7 +17,7 @@ https://www.figma.com/file/OAMrciHo0uOf4H2cgg3MDm/Coopers---Site-para-teste-Fron
 ## Link e acesso
 <a href="https://task-manager-edb5b.web.app/">https://task-manager-edb5b.web.app/</a>
 
-É possível usar sem fazer login. Caso queira você pode criar um novo usuário.
+Não é necessário login, mas caso queira você pode logar com o usuário abaixo ou criar um para você.
 
 - <b>Login:</b> teste@teste.com
 - <b>Senha:</b> 123456
