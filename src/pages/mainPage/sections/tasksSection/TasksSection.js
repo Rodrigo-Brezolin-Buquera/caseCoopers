@@ -8,7 +8,7 @@ import Triangle from "../../../../assets/Triangle.png"
 export const TasksSection = ({setLoading, loading, userId, tasks}) => {
  
     return (
-        <section>
+        <section id="tasks">
             <Box mb={"4em"} position={"relative"}>
 
                 <Image

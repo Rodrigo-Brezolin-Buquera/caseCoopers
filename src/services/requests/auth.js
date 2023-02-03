@@ -1,6 +1,5 @@
-import { auth, database } from "./config"
+import { auth } from "./config"
 import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth"
-import { collection,doc,setDoc } from "firebase/firestore/lite"
 
 export const login = async (form, setLoading) => {
     try {
@@ -19,6 +18,7 @@ export const singUp = async (form, setLoading) => {
     try {
         setLoading(true)
         await createUserWithEmailAndPassword(auth, form.email, form.password)
+        setLoading(false)
     } catch (err) {
         console.log(err)
         alert("SingUp error, try again later")
