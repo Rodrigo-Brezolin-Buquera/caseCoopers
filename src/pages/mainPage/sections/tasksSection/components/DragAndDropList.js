@@ -42,7 +42,7 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
         const newTaskList = [...tasksList]
         const index = newTaskList.findIndex(i => i.id === taskId)
         newTaskList[index].done = doneStatus
-         setTasksList(newTaskList)
+        setTasksList(newTaskList)
         updateTask(userId, taskId, newTaskList[index], setLoading)
     }
     return (
@@ -65,9 +65,14 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                     <AddTaskInput userId={userId} setLoading={setLoading} />
                     <StrictModeDroppable droppableId='toDo' >
                         {(provided) => (
-                            <ul {...provided.droppableProps} ref={provided.innerRef}>
+                            <Box
+                                w={"100%"}
+                                h={"100%"}
+                                {...provided.droppableProps} ref={provided.innerRef}
+                                >
                                 {toDoTasksList.length ? toDoTasksList : null}
-                            </ul>
+                                {provided.placeholder}
+                            </Box>
                         )
                         }
                     </StrictModeDroppable>
@@ -83,9 +88,14 @@ export const DragAndDropList = ({ tasks, userId, setLoading }) => {
                 >
                     <StrictModeDroppable droppableId='done' >
                         {(provided) => (
-                            <ul {...provided.droppableProps} ref={provided.innerRef}>
+                            <Box
+                                w={"100%"}
+                                h={"100%"}
+                                {...provided.droppableProps} ref={provided.innerRef}
+                                >
                                 {doneTasksList.length ? doneTasksList : null}
-                            </ul>
+                                {provided.placeholder}
+                            </Box>
                         )
                         }
                     </StrictModeDroppable>
