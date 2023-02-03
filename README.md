@@ -26,7 +26,7 @@ https://www.figma.com/file/OAMrciHo0uOf4H2cgg3MDm/Coopers---Site-para-teste-Fron
 
 <h4>1º | Faça o clone do repositório: </h4>
 
-    git clone 
+    git clone https://github.com/Rodrigo-Brezolin-Buquera/caseCoopers.git
 
 <h4>2º | Na pasta do repositório, instale as dependências com o comando: </h4>
 
