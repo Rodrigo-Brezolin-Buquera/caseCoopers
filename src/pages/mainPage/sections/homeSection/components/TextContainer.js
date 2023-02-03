@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
 
 
 export const TextContainer = () => {
@@ -41,14 +41,15 @@ export const TextContainer = () => {
                 The only way to get things done
             </Text>
             <Button bg={"brand.100"} w={"300px"} h={"64px"} >
-                <Text
+                <Link
                     fontSize={"2xl"}
                     color={"brand.400"}
                     fontFamily={"primary"}
+                    href="#tasks"
                 >
                     Go to To-do list
 
-                </Text>
+                </Link>
             </Button>
 
         </Box>

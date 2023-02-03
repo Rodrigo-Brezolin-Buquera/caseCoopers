@@ -15,6 +15,9 @@ export const MainPage = () => {
     const [tasks, setTasks] = useState([])
     const [id, setId] = useState([])
 
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])
 
     useEffect(() => {
         const docId = !loggedIn  ? "uMpfKFlaKcZPCt2tHswkIpirSRX2" : userId
