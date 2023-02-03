@@ -17,8 +17,9 @@ https://www.figma.com/file/OAMrciHo0uOf4H2cgg3MDm/Coopers---Site-para-teste-Fron
 ## Link e acesso
 <a href="">link</a>
 
+É possível usar sem fazer login. Caso queira você pode criar um novo usuário.
 
-- <b>Login:</b> 
+- <b>Login:</b> teste@teste.com
 - <b>Senha:</b> 123456
 
 ## Rodando localmente
