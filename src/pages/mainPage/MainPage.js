@@ -1,13 +1,24 @@
 import { TasksSection } from "./sections/tasksSection/TasksSection"
-import React from "react";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/useAuth"
 import { Box } from "@chakra-ui/react";
 import { Footer } from "./sections/footer/footer";
 import { Header } from "./sections/header/Header.js";
 import { HomeSection } from "./sections/homeSection/HomeSection";
 import { FormSection } from "./sections/formSection/FormSection";
 import { CarouselSection } from "./sections/carouselSection/CarouselSection";
+import { getAllTasks } from "../../services/requests/getAllTasks";
 
 export const MainPage = () => {
+    const [loading, setLoading] = useState(false)
+    const { userId, loggedIn } = useAuth()
+    const [tasks, setTasks] = useState([])
+
+    useEffect(() => {
+        const docId = !loggedIn ? "uMpfKFlaKcZPCt2tHswkIpirSRX2" : userId
+        getAllTasks(docId, setTasks)
+    }, [loading, userId, loggedIn])
+
     return (
         <Box
             w={"100%"}
@@ -17,12 +28,22 @@ export const MainPage = () => {
             flexDirection={"column"}
             bg={"brand.400"}
         >
-            <Header/>
-            <HomeSection/>
-            <TasksSection />
-            <CarouselSection/>
-            <FormSection/>
-            <Footer/>
+            <Header
+                loading={loading}
+                setLoading={setLoading}
+                loggedIn={loggedIn}
+            />
+            <HomeSection />
+            <TasksSection
+                tasks={tasks}
+                userId={userId}
+                loggedIn={loggedIn}
+                loading={loading}
+                setLoading={setLoading}
+            />
+            <CarouselSection />
+            <FormSection />
+            <Footer />
         </Box>
     )
 }

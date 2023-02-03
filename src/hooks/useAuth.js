@@ -7,6 +7,5 @@ export const useAuth =() => {
     useLayoutEffect(() => {  
         isLogged(setStatus);   
     },[])
-
   return status
 }

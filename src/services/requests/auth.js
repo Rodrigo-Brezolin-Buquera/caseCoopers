@@ -1,5 +1,6 @@
-import { auth } from "./config"
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { auth, database } from "./config"
+import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth"
+import { collection,doc,setDoc } from "firebase/firestore/lite"
 
 export const login = async (form, setLoading) => {
     try {
@@ -9,8 +10,20 @@ export const login = async (form, setLoading) => {
 
     } catch (err) {
         console.log(err)
-        alert("Erro no login, tente novamente")
+        alert("Login error, try again later")
         setLoading(false)
+    }
+}
+
+export const singUp = async (form, setLoading) => {
+    try {
+        setLoading(true)
+        await createUserWithEmailAndPassword(auth, form.email, form.password)
+    } catch (err) {
+        console.log(err)
+        alert("SingUp error, try again later")
+        setLoading(false)
+
     }
 }
 
@@ -26,12 +39,12 @@ export const logout = async (setLoading) => {
     }
 }
 
-export const isLogged =  async(setStatus) => {
-  return onAuthStateChanged(auth, (user)=>{
-       if(user){
-        setStatus({loggedIn: true, userId: user.uid})
-       } else {
-        setStatus({loggedIn: false, userId: null})
-       }
+export const isLogged = async (setStatus) => {
+    return onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setStatus({ loggedIn: true, userId: user.uid })
+        } else {
+            setStatus({ loggedIn: false, userId: null })
+        }
     })
 }

@@ -9,7 +9,6 @@ export const getAllTasks = async (userId, setTasks) => {
         setTasks(tasksList)
     } catch (err) {
         console.log(err)
-        alert("Erro ao acessar tarefas, tente novamente")
     }
 
 }
