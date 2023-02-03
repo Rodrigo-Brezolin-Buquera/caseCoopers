@@ -6,7 +6,6 @@ import { deleteTaskByStatus } from "../../../../../services/requests/deleteTaskB
 export const TasksCard = (props) => {
     const [cardLoading, setCardLoading] = useState(false)
 
-
     const eraseAllTasks = async () => {
         const status = props.cardName === "Done" ? true : false
         props.setLoading(true)
@@ -16,10 +15,13 @@ export const TasksCard = (props) => {
 
     useEffect(() => { }, [cardLoading])
 
-    
-
     return (
-        <Card w={"380px"} minH={"500px"} alignItems={"center"} bg={"brand.400"}
+        <Card
+            w={"380px"}
+            minH={"500px"}
+            alignItems={"center"}
+            bg={"brand.400"}
+            m={"0.5em"}
         >
             <Box
                 w={"100%"}
@@ -40,11 +42,18 @@ export const TasksCard = (props) => {
                 pt={"0"}
             >
 
-                <Box display={"flex"} flexDirection={"column"} alignItems={"center"} >
+                <Box
+                    display={"flex"}
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                >
                     <Text fontSize='xl' >
                         {props.firstLine}
                     </Text>
-                    <Text fontSize='xl' fontWeight={props.cardName === "Done" ? "bold" : "normal"} >
+                    <Text
+                        fontSize='xl'
+                        fontWeight={props.cardName === "Done" ? "bold" : "normal"}
+                    >
                         {props.secondLine}
                     </Text>
                 </Box>

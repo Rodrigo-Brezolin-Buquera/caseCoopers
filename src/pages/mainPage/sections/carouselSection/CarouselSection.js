@@ -22,10 +22,10 @@ export const CarouselSection = () => {
                     color={"white"}
                     size={"xl"}
                     top={"70px"}
-                    left={"130px"}
+                    left={["24px","64px","128px"]}
                 >good things
                 </Heading>
-                <Box position={"absolute"} left={"120px"} top={"150px"} w={'100%'}>
+                <Box position={"absolute"} left={["10px","40px","120px" ]} top={"150px"} w={'100%'}>
                     <ImageCarousel />
                 </Box>
 

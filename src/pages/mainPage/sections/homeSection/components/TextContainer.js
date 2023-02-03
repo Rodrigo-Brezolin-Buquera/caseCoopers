@@ -12,7 +12,7 @@ export const TextContainer = () => {
             alignItems={"start"}
             gap={"0.5em"}
             p={"4em"}
-            minW={"400px"}
+            minW={"380px"}
         >
             <Heading color={"brand.300"} size={"4xl"} >Organize</Heading>
             <Heading color={"brand.100"}>your daily jobs</Heading>

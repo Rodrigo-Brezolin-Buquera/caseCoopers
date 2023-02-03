@@ -23,6 +23,7 @@ export const AddTaskInput = ({userId, setLoading }) => {
               onKeyPress={handleKeyPress}
               autoFocus
               placeholder="Add a new task!"
+              mb={"0.2em"}
             />        
     )
 }

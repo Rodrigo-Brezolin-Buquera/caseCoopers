@@ -21,18 +21,19 @@ export const ToDoListHeading = () => {
                 alignItems={"center"}
 
             >
-                <Heading fontSize={"5xl"} color={"brand.400"}  >To-do List </Heading>
-                <Divider 
-                w={"200px"} 
-                borderColor={"brand.100"} 
-                borderWidth={"0.1em"}
-                mb={"0.1em"}
+                <Heading fontSize={["3xl", "4xl", "5xl"]} color={"brand.400"}  >To-do List </Heading>
+                <Divider
+                    w={["100px", "150px", "200px"]}
+                    borderColor={"brand.100"}
+                    borderWidth={"0.1em"}
+                    mb={"0.1em"}
                 />
-                <Text 
-                color={"brand.400"}
-                textAlign={"center"}
-                w={"600px"}
-                fontSize={"xl"}
+                <Text
+                    color={"brand.400"}
+                    textAlign={"center"}
+                    w={["300px","400px","600px"]}
+                    fontSize={["md", "xl", "xl"]}
+                    
                 > Drag and drop to set your main priorities, check when done and create what´s new.
                 </Text>
             </Box>

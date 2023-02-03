@@ -1,4 +1,7 @@
-import { Text, Image, CardFooter, Button, Card, Stack, CardBody } from "@chakra-ui/react";
+import {
+    Text, Image, CardFooter,
+    Button, Card, Stack, CardBody
+} from "@chakra-ui/react";
 import Triangle from "../../../../../assets/Triangle.png"
 
 export const InformationCard = (props) => {
@@ -17,14 +20,19 @@ export const InformationCard = (props) => {
                     w={"50px"}
                     position={"absolute"}
                     right={"5%"}
-                    top={"-20%"}
+                    top={["-15%", "-15%", "-16%", "-17%", "-20%"]}
 
                 />
-                <Button borderColor={"grey"} backgroundColor={"brand.400"} borderRadius={"18px"} >
+                <Button
+                    borderColor={"grey.100"}
+                    border={"1px"}
+                    backgroundColor={"brand.400"}
+                    borderRadius={"18px"}
+                >
                     <Text color={"grey"} >function</Text>
                 </Button>
                 <Stack mt='6' spacing='3'>
-                    <Text>
+                    <Text h={"30px"}>
                         {props.text}
                     </Text>
 
