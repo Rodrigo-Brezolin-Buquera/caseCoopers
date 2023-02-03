@@ -23,6 +23,8 @@ export const CarouselSection = () => {
                     size={"xl"}
                     top={"70px"}
                     left={["24px","64px","128px"]}
+                    fontFamily={"primary"}
+                    fontWeight={"black"}
                 >good things
                 </Heading>
                 <Box position={"absolute"} left={["10px","40px","120px" ]} top={"150px"} w={'100%'}>

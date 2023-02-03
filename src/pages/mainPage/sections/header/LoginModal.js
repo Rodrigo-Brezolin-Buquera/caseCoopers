@@ -30,16 +30,17 @@ export const LoginModal = ({ isOpen, onClose }) => {
             <ModalOverlay />
             <ModalContent minW={"600px"}  >
                 <ModalCloseButton size={"md"} >
-                    <Text fontWeight={"bold"} >close</Text>  
-                     </ModalCloseButton >
+                    <Text fontWeight={"bold"} >close</Text>
+                </ModalCloseButton >
                 <ModalBody p={"3em"} >
-                    <Box display={"flex"} justifyContent={"start"}>
+                    <Box display={"flex"} justifyContent={["center", "center", "start"]}  >
                         <LoginIcon />
                         <Box
                             display={"flex"}
                             flexDirection={"column"}
                             justifyContent={"center"}
                             alignItems={'start'}
+
                         >
                             <Heading size={"2xl"}>Sign in </Heading>
 
@@ -52,7 +53,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                     <form onSubmit={handleSubmit(onSubmit)} >
                         <FormControl isInvalid={errors.email || errors.password}>
                             <Box
-                                minW={"250px"}
+                                minW={"342px"}
                                 display={"flex"}
                                 flexDirection={"column"}
                                 alignItems={"center"}
@@ -60,10 +61,11 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                 gap={"0.5em"}
 
                             >
-                                <Box display={"flex"} alignItems={'flex-start'} w={"250px"}>
-                                    <Text fontWeight={"bold"}  >User:</Text>
+                                <Box display={"flex"} alignItems={'flex-start'} w={"342px"}>
+                                    <Text fontFamily={"primary"} fontWeight={"bold"}  >User:</Text>
                                 </Box>
                                 <Input
+                                    fontFamily={"primary"}
                                     id="email"
                                     placeholder="e-mail"
                                     {...register("email", {
@@ -71,13 +73,14 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     })}
                                     variant="outline"
                                     borderRadius={"2px"}
-                                    w={"250px"}
+                                    w={"342px"}
                                 />
-                                <Box display={"flex"} alignItems={'flex-start'} w={"250px"}>
-                                    <Text fontWeight={"bold"}  >Password:</Text>
+                                <Box display={"flex"} alignItems={'flex-start'} w={"342px"}>
+                                    <Text fontFamily={"primary"} fontWeight={"bold"}  >Password:</Text>
                                 </Box>
 
                                 <Input
+                                    fontFamily={"primary"}
                                     id="password"
                                     placeholder="senha"
                                     {...register("password", {
@@ -86,7 +89,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     variant="outline"
                                     type='password'
                                     borderRadius={"2px"}
-                                    w={"250px"}
+                                    w={"342px"}
                                 />
 
                                 <Button
@@ -95,18 +98,29 @@ export const LoginModal = ({ isOpen, onClose }) => {
                                     type="submit"
                                     bg={"brand.100"}
                                     borderRadius={'0'}
-                                    w={"200px"}
+                                    w={"300px"}
+                                    h={"64px"}
 
                                 >
                                     {loading ?
                                         <CircularProgress isIndeterminate color={"brand.400"} size="30px" />
                                         :
-                                        <Text color={"brand.400"}>
+                                        <Text
+                                            fontFamily={"primary"}
+                                            fontSize={"xl"}
+                                            color={"brand.400"}
+                                            fontWeight={"bold"}
+                                        >
                                             Sign in
                                         </Text>}
                                 </Button>
                             </Box>
-                            <FormErrorMessage display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                            <FormErrorMessage
+                                fontFamily={"primary"}
+                                display={"flex"}
+                                flexDirection={"column"}
+                                alignItems={"center"}
+                            >
                                 {errors.email && errors.email.message}
                                 <br />
                                 {errors.password && errors.password.message}

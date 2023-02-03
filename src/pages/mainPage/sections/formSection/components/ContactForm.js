@@ -39,8 +39,9 @@ export const ContactForm = () => {
                         gap={"0.5em"}
                     >
 
-                        <Text >Your name</Text>
+                        <Text fontFamily={"primary"} >Your name</Text>
                         <Input
+                            fontFamily={"primary"}
                             id="name"
                             placeholder="Type your name here"
                             {...register("name", {
@@ -53,8 +54,9 @@ export const ContactForm = () => {
                         <Box display={"flex"} gap={'1em'} >
 
                             <Box>
-                                <Text  >Email*</Text>
+                                <Text fontFamily={"primary"} >Email*</Text>
                                 <Input
+                                    fontFamily={"primary"}
                                     id="email"
                                     placeholder="example@example.com"
                                     {...register("email", {
@@ -67,8 +69,9 @@ export const ContactForm = () => {
                             </Box>
 
                             <Box>
-                                <Text  >Telephone*</Text>
+                                <Text fontFamily={"primary"} >Telephone*</Text>
                                 <Input
+                                    fontFamily={"primary"}
                                     id="telephone"
                                     placeholder="(  ) ____-____"
                                     {...register("telephone", {
@@ -83,8 +86,9 @@ export const ContactForm = () => {
                         </Box>
 
 
-                        <Text>Message*</Text>
+                        <Text fontFamily={"primary"} >Message*</Text>
                         <Textarea
+                            fontFamily={"primary"}
                             id="message"
                             placeholder="Type what you want to say to us"
                             {...register("message", {
@@ -94,7 +98,7 @@ export const ContactForm = () => {
                             borderRadius={"4px"}
                             borderColor={"black"}
                             h={"150px"}
-                          
+
                         />
 
                         <Button
@@ -105,12 +109,12 @@ export const ContactForm = () => {
                             borderRadius={"4px"}
                         >
 
-                            <Text fontSize={"sm"} color={"brand.400"} >
+                            <Text fontFamily={"primary"} fontSize={"sm"} color={"brand.400"} >
                                 SEND NOW
                             </Text>
                         </Button>
                     </Box>
-                    <FormErrorMessage display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                    <FormErrorMessage fontFamily={"primary"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
                         {errors.name && errors.name.message}
                         <br />
                         {errors.email && errors.email.message}

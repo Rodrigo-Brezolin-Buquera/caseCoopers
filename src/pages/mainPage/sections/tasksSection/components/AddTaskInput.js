@@ -18,6 +18,9 @@ export const AddTaskInput = ({userId, setLoading }) => {
             <Input 
               type="text"
               variant='unstyled'
+              fontFamily={"primary"}
+              fontWeight={"black"}
+              color={"black"}
               value={text}
               onChange={(e) => setText(e.target.value)}
               onKeyPress={handleKeyPress}

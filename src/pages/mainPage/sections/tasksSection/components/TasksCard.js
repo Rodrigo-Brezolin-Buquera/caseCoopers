@@ -30,7 +30,7 @@ export const TasksCard = (props) => {
             />
 
             <CardHeader>
-                <Heading size='xl'>{props.cardName}</Heading>
+                <Heading size='xl' fontFamily={"secondary"}>{props.cardName}</Heading>
             </CardHeader>
 
             <CardBody
@@ -47,11 +47,11 @@ export const TasksCard = (props) => {
                     flexDirection={"column"}
                     alignItems={"center"}
                 >
-                    <Text fontSize='xl' >
+                    <Text fontSize='xl' fontFamily={"primary"} >
                         {props.firstLine}
                     </Text>
                     <Text
-                        fontSize='xl'
+                        fontSize='xl' fontFamily={"primary"}
                         fontWeight={props.cardName === "Done" ? "bold" : "normal"}
                     >
                         {props.secondLine}

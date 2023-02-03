@@ -14,13 +14,29 @@ export const TextContainer = () => {
             p={"4em"}
             minW={"380px"}
         >
-            <Heading color={"brand.300"} size={"4xl"} >Organize</Heading>
-            <Heading color={"brand.100"}>your daily jobs</Heading>
+            <Heading
+                fontFamily={"primary"}
+                color={"brand.300"}
+                size={"4xl"}
+                fontWeight={"black"}
+
+            >
+                Organize
+            </Heading>
+            <Heading
+                fontFamily={"primary"}
+                color={"brand.100"}
+            >
+                your daily jobs
+
+            </Heading>
             <Text
-                mt={"0.5em"} mb={"0.5em"}
+
+                mt={"1em"} mb={"1em"}
                 color={"brand.300"}
                 fontSize={"2xl"}
                 letterSpacing={"wide"}
+                fontFamily={"primary"}
             >
                 The only way to get things done
             </Text>
@@ -28,6 +44,7 @@ export const TextContainer = () => {
                 <Text
                     fontSize={"2xl"}
                     color={"brand.400"}
+                    fontFamily={"primary"}
                 >
                     Go to To-do list
 

@@ -31,6 +31,7 @@ export const EditableText = (props) => {
           />
         ) : (
           <Text
+            fontFamily={"primary"}
             fontSize={"xl"}
             m={"0.2em"}
             pb={"0.2em"}

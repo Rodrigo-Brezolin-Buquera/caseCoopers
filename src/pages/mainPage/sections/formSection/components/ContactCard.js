@@ -27,13 +27,24 @@ export const ContactCard = () => {
                 <EmailImage />
                 <Box>
                     <Heading
+                        fontFamily={"primary"}
                         size='md'
-                        fontWeight={"normal"}
                         letterSpacing={"widest"}
-                    > Get In</Heading>
-                    <Heading size='md' letterSpacing={"widest"}> Touch</Heading>
+                        fontWeight={"normal"}
+                    >
+                        Get In
+                    </Heading>
+                    <Heading
+                        fontFamily={"primary"}
+                        size='md'
+                        letterSpacing={"widest"}
+                        fontWeight={"extrabold"}
+                    >
+                        Touch
+                    </Heading>
 
                 </Box>
+
 
             </CardHeader>
             <CardBody>

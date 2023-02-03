@@ -29,10 +29,10 @@ export const InformationCard = (props) => {
                     backgroundColor={"brand.400"}
                     borderRadius={"18px"}
                 >
-                    <Text color={"grey"} >function</Text>
+                    <Text color={"grey"} fontSize={"smaller"} fontFamily={"secondary"} >function</Text>
                 </Button>
                 <Stack mt='6' spacing='3'>
-                    <Text h={"30px"}>
+                    <Text h={"30px"} fontFamily={"primary"}>
                         {props.text}
                     </Text>
 
@@ -42,7 +42,7 @@ export const InformationCard = (props) => {
             <CardFooter>
 
                 <Button variant='ghost' >
-                    <Text color={"brand.200"}>Read more</Text>
+                    <Text color={"brand.200"} fontFamily={"secondary"}>Read more</Text>
                 </Button>
             </CardFooter>
         </Card>
