@@ -58,5 +58,6 @@ https://www.figma.com/file/OAMrciHo0uOf4H2cgg3MDm/Coopers---Site-para-teste-Fron
 <img width="1430" alt="Captura de Tela 2023-02-03 às 20 02 36" src="https://user-images.githubusercontent.com/81428197/216727226-0837b7b1-a27e-4b94-b338-3e162432934d.png">
 <img width="1426" alt="Captura de Tela 2023-02-03 às 20 02 50" src="https://user-images.githubusercontent.com/81428197/216727227-2ff626b3-e3e7-4659-8d7b-c327ba7be999.png">
 <img width="1428" alt="Captura de Tela 2023-02-03 às 20 03 04" src="https://user-images.githubusercontent.com/81428197/216727228-ee7a68f1-30c8-43ff-9df7-7aa66cf146bc.png">
+<img width="1387" alt="Captura de Tela 2023-02-03 às 20 11 49" src="https://user-images.githubusercontent.com/81428197/216728086-4698306f-0587-4be8-a06a-cadbc257befc.png">
 
 
