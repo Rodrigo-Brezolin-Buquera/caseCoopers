@@ -2,7 +2,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { EditableText } from './EditableText';
 import { Box, Checkbox } from '@chakra-ui/react';
 import { DeleteTaskButton } from './DeleteTaskButton';
-import { updateTask } from '../../../../../services/requests/updateTask';
+import { updateTask } from '../../../../../services/requests/crud';
 
 export const TaskLine = ({ index, userId, task, setLoading }) => {
 

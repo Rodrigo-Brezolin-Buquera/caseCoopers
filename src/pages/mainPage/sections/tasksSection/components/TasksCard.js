@@ -1,7 +1,7 @@
-import { Card, CardHeader, Heading, CardBody, StackDivider, Text, Stack, Box, Button } from "@chakra-ui/react"
+import { Card, CardHeader, Heading, CardBody, Text, Box } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 import { EraseAllButton } from "./EraseAllButton"
-import { deleteTaskByStatus } from "../../../../../services/requests/deleteTaskByStatus"
+import { deleteTaskByStatus } from "../../../../../services/requests/crud"
 
 export const TasksCard = (props) => {
     const [cardLoading, setCardLoading] = useState(false)

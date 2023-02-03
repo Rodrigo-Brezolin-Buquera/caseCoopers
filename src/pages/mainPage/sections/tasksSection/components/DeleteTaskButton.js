@@ -1,5 +1,5 @@
 import { CircularProgress, Button, Box, Text } from "@chakra-ui/react"
-import { deleteTaskById } from "../../../../../services/requests/deleteTaskById"
+import { deleteTaskById } from "../../../../../services/requests/crud"
 import { useState } from "react"
 
 export const DeleteTaskButton = (props) => {

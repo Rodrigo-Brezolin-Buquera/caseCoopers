@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { StrictModeDroppable } from './StrictModeDroppable';
-import { updateTask } from '../../../../../services/requests/updateTask';
+import { updateTask } from '../../../../../services/requests/crud';
 import { TasksCard } from './TasksCard';
 import { Box } from '@chakra-ui/react';
 import { AddTaskInput } from './AddTaskInput';

@@ -7,7 +7,7 @@ import { Header } from "./sections/header/Header.js";
 import { HomeSection } from "./sections/homeSection/HomeSection";
 import { FormSection } from "./sections/formSection/FormSection";
 import { CarouselSection } from "./sections/carouselSection/CarouselSection";
-import { getAllTasks } from "../../services/requests/getAllTasks";
+import { getAllTasks } from "../../services/requests/crud";
 
 export const MainPage = () => {
     const [loading, setLoading] = useState(false)

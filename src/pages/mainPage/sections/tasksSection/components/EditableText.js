@@ -1,7 +1,6 @@
 import { Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { updateTask } from "../../../../../services/requests/updateTask";
-
+import { updateTask } from "../../../../../services/requests/crud";
 
 export const EditableText = (props) => {
   const [text, setText] = useState(props.task.name);
@@ -14,7 +13,6 @@ export const EditableText = (props) => {
       await updateTask(props.userId, props.task.id, editedTask, setLoading)
       setShowInputEle(false)
     }
-
   };
 
   return (
@@ -33,6 +31,7 @@ export const EditableText = (props) => {
           <Text
             fontFamily={"primary"}
             fontSize={"xl"}
+            textDecoration={ props.task.done ? "line-through" : "none"}
             m={"0.2em"}
             pb={"0.2em"}
             onDoubleClick={() => setShowInputEle(true)}

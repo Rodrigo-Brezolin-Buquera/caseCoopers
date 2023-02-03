@@ -1,7 +1,6 @@
 import { Input } from "@chakra-ui/react";
 import { useState } from "react";
-import { createTask } from "../../../../../services/requests/createTask";
-
+import { createTask } from "../../../../../services/requests/crud";
 
 export const AddTaskInput = ({userId, setLoading }) => {
     const [text, setText] = useState("");
@@ -13,7 +12,6 @@ export const AddTaskInput = ({userId, setLoading }) => {
         
     }}
 
-   
     return (
             <Input 
               type="text"
