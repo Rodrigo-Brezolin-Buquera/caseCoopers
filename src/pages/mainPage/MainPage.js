@@ -13,9 +13,12 @@ export const MainPage = () => {
     const [loading, setLoading] = useState(false)
     const { userId, loggedIn } = useAuth()
     const [tasks, setTasks] = useState([])
+    const [id, setId] = useState([])
+
 
     useEffect(() => {
-        const docId = !loggedIn ? "uMpfKFlaKcZPCt2tHswkIpirSRX2" : userId
+        const docId = !loggedIn  ? "uMpfKFlaKcZPCt2tHswkIpirSRX2" : userId
+        setId(docId)
         getAllTasks(docId, setTasks)
     }, [loading, userId, loggedIn])
 
@@ -36,7 +39,7 @@ export const MainPage = () => {
             <HomeSection />
             <TasksSection
                 tasks={tasks}
-                userId={userId}
+                userId={id}
                 loggedIn={loggedIn}
                 loading={loading}
                 setLoading={setLoading}

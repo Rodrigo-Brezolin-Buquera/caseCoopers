@@ -3,7 +3,6 @@ import { database } from "./config"
 
 export const updateTask = async (userId, taskId, task, setLoading) => { 
     try {
-
         setLoading(true)
         const taskCollection = collection(database, userId)
         const docRef = doc(taskCollection, taskId)
